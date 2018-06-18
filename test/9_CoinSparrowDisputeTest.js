@@ -110,7 +110,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _contractor,
@@ -204,7 +204,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -249,7 +249,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -333,7 +333,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -388,7 +388,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         {
           from: _contractor,
         });
-      await this.coinSparrow.requestMutualCancelation(
+      await this.coinSparrow.requestMutualJobCancellation(
         _jobId, _hirer, _contractor, _value, _fee,
         {
           from: _hirer,

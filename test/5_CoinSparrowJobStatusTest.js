@@ -133,7 +133,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
       });
 
     it(
-      'Status should = STATUS_HIRER_REQUEST_CANCEL after hirer calls requestMutualCancelation',
+      'Status should = STATUS_HIRER_REQUEST_CANCEL after hirer calls requestMutualJobCancellation',
       async function () {
         await this.coinSparrow.createJobEscrow(_jobId,
           _hirer, _contractor, _value, _fee,
@@ -147,7 +147,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -161,7 +161,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
       });
 
     it(
-      'Status should = STATUS_CONTRACTOR_REQUEST_CANCEL after hirer calls requestMutualCancelation',
+      'Status should = STATUS_CONTRACTOR_REQUEST_CANCEL after hirer calls requestMutualJobCancellation',
       async function () {
         await this.coinSparrow.createJobEscrow(_jobId,
           _hirer, _contractor, _value, _fee,
@@ -175,7 +175,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _contractor,

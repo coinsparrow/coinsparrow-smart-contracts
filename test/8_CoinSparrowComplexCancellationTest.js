@@ -139,7 +139,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -156,7 +156,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
             from: _hirer,
             value: _value,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -184,7 +184,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -207,7 +207,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -225,7 +225,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -250,7 +250,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -268,7 +268,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -279,7 +279,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
       });
 
     it(
-      'Address other than Hirer or Contractor cannot call mutuallyAgreedCancellation',
+      'Address other than Hirer or Contractor cannot call processMutuallyAgreedJobCancellation',
       async function () {
         await this.coinSparrow.createJobEscrow(_jobId,
           _hirer, _contractor, _value, _fee,
@@ -293,7 +293,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -311,7 +311,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -319,7 +319,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
             from: _owner,
           })
           .should.be.rejected;
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -327,7 +327,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
             from: 0x0,
           })
           .should.be.rejected;
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -352,7 +352,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -371,7 +371,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -379,7 +379,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
             from: _contractor,
           })
           .should.be.rejected;
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -404,7 +404,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -423,7 +423,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           _contractor, _sigMsg);
 
         // only contractor signed
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, '', _signatureContractor,
           {
@@ -431,7 +431,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           })
           .should.be.rejected;
         // only hirer signed
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer, '',
           {
@@ -439,7 +439,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           })
           .should.be.rejected;
         // neither signed
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, '', '',
           {
@@ -448,7 +448,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           .should.be.rejected;
 
         // OK
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -471,7 +471,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         {
           from: _contractor,
         });
-      await this.coinSparrow.requestMutualCancelation(
+      await this.coinSparrow.requestMutualJobCancellation(
         _jobId, _hirer, _contractor, _value, _fee,
         {
           from: _hirer,
@@ -491,7 +491,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
 
       let adjustedPercent = _contractorPercent + 1;
 
-      await this.coinSparrow.mutuallyAgreedCancellation(
+      await this.coinSparrow.processMutuallyAgreedJobCancellation(
         _jobId, _hirer, _contractor, _value, _fee,
         adjustedPercent, _signatureHirer,
         _signatureContractor,
@@ -499,7 +499,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           from: _contractor,
         })
         .should.be.rejected;
-      await this.coinSparrow.mutuallyAgreedCancellation(
+      await this.coinSparrow.processMutuallyAgreedJobCancellation(
         _jobId, _hirer, _contractor, _value, _fee,
         adjustedPercent, _signatureHirer,
         _signatureContractor,
@@ -531,7 +531,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -549,7 +549,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -591,7 +591,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -609,7 +609,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
@@ -648,7 +648,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           {
             from: _contractor,
           });
-        await this.coinSparrow.requestMutualCancelation(
+        await this.coinSparrow.requestMutualJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           {
             from: _hirer,
@@ -666,7 +666,7 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         const _signatureContractor = web3.eth.sign(
           _contractor, _sigMsg);
 
-        await this.coinSparrow.mutuallyAgreedCancellation(
+        await this.coinSparrow.processMutuallyAgreedJobCancellation(
           _jobId, _hirer, _contractor, _value, _fee,
           _contractorPercent, _signatureHirer,
           _signatureContractor,
