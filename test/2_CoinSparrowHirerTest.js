@@ -149,6 +149,14 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
           from: 0x0,
         })
         .should.be.rejectedWith(EVMInvalidAddress);
+
+      await this.coinSparrow.hirerReleaseFunds(_jobId,
+        _hirer, _contractor, _value, _fee,
+        {
+          from: _hirer,
+        })
+        .should.be.fulfilled;
+
     });
   });
 });
