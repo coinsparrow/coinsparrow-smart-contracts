@@ -1,4 +1,4 @@
-const SolidityEvent = require('web3/lib/web3/event.js');
+const SolidityEvent = require('solidity-coverage/node_modules/web3/lib/web3/event.js');
 
 export default function decodeLogs (logs, contract, address) {
   return logs.map(log => {
