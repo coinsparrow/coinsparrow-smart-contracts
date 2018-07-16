@@ -98,6 +98,8 @@ contract('CoinSparrow', function ([_owner, _hirer, _contractor,
         .should.be.rejectedWith(EVMRevert);
 
       // OK
+      console.log("this works: ", _jobId, "hirer: ",_hirer,"con: ", _contractor,"val: ", _value, "fee: ",_fee);
+
       await this.coinSparrow.createJobEscrow(_jobId,
         _hirer, _contractor, _value, _fee,
         _jobStartWindow, this.agreedSecondsToComplete,
